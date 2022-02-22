@@ -1,4 +1,4 @@
-var nums = [2, 1, 629, 25, 3525];
+var nums = [2, 1, 629, 25, 3525, 0];
 
 function getMinAndMax(nums) {
   // todo
