@@ -224,6 +224,20 @@ class LinkedList {
     // }
   }
 
+  reverseLinkedListRecursive(currentNode = this.head, previousNode = null, nextNode = null) {
+    
+    if (currentNode !== null) {
+      nextNode = currentNode.next;
+      currentNode.next = previousNode;
+      previousNode = currentNode;
+      currentNode = nextNode;
+      this.reverseLinkedListRecursive(currentNode, previousNode, nextNode);
+    }
+    else {
+      this.head = previousNode;
+    }
+  }
+
 }
 
 // First create two list nodes
@@ -264,6 +278,8 @@ ll.add(11);
 
 ll.printList();
 
-ll.reverseLinkedList();
+//ll.reverseLinkedList();
+
+ll.reverseLinkedListRecursive();
 
 ll.printList();
