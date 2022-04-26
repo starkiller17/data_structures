@@ -182,34 +182,46 @@ class LinkedList {
 
   reverseLinkedList() {
     let currentNode = this.head;
-    let lastNode = this.getLast();
-    let previousNode, nextNode;
-    let node = 1;
+    //let lastNode = this.getLast();
+    let previousNode = null;
+    let nextNode = null;
+    //let node = 1;
+    
 
-    while(node < this.sizeOfList()) {
-      if (node ===  1) {
-        this.head = currentNode.next;
-        lastNode.next = currentNode;
-        previousNode = lastNode;
-        nextNode = currentNode;
-        lastNode = currentNode;
-        lastNode.next = null;
-        currentNode = this.head;
-      } else {
-        this.head = currentNode.next;
-        previousNode.next = currentNode;
-        currentNode.next = nextNode;
-        nextNode = currentNode;
-        //lastNode = currentNode;
-        currentNode = this.head;
-      }
-      
-      // console.log('Current Node: ', currentNode);
-      // console.log('Head: ', this.head);
-      // console.log('Last Node: ', lastNode);
-
-      node++;
+    while(currentNode !== null) {
+      console.log('Current Node: ', currentNode);
+      nextNode = currentNode.next;
+      currentNode.next = previousNode;
+      previousNode = currentNode;
+      currentNode = nextNode;
     }
+
+    this.head = previousNode;
+    //this.head = previousNode;
+    // while(node < this.sizeOfList()) {
+    //   if (node ===  1) {
+    //     this.head = currentNode.next;
+    //     lastNode.next = currentNode;
+    //     previousNode = lastNode;
+    //     nextNode = currentNode;
+    //     lastNode = currentNode;
+    //     lastNode.next = null;
+    //     currentNode = this.head;
+    //   } else {
+    //     this.head = currentNode.next;
+    //     previousNode.next = currentNode;
+    //     currentNode.next = nextNode;
+    //     nextNode = currentNode;
+    //     //lastNode = currentNode;
+    //     currentNode = this.head;
+    //   }
+      
+    //   // console.log('Current Node: ', currentNode);
+    //   // console.log('Head: ', this.head);
+    //   // console.log('Last Node: ', lastNode);
+
+    //   node++;
+    // }
   }
 
 }
